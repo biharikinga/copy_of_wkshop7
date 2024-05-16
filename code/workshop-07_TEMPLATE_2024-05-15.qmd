@@ -69,8 +69,10 @@ Annotate the code to make `abalone_plot`. Make the plot look better by:
 ```{r prelim-data-visualization}
 abalone_plot <- ggplot(data = abalone,
                        aes(x = temperature,
-                           y = growth)) +
-  geom_point()
+                           y = growth),
+                       size = 2) +
+  geom_point() +
+  theme_classic()
 
 abalone_plot
 ```
@@ -173,7 +175,7 @@ Use `ggsave()` to save `abalone_model_plot` as a .jpg in `images`.
 Annotate the code below.
 
 ```{r abalone-plot-save}
-ggsave(filename = here("images", "abalone_model_plot.jpg"),
+ggsave(filename = here("abalone_model_plot.jpg"),
        width = 10,
        height = 8,
        units = "cm")
